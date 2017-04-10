@@ -29,6 +29,10 @@ public class DrawingTemplate : MonoBehaviour
 
     #region public methods
 
+    public void SetShapes(List<Shape> shapes) {
+        m_ShapeList = new List<Shape>(shapes);
+    }
+
     public void ShowFirstShapeTemplate()
     {
         m_ShapeIndex = 0;
@@ -79,7 +83,6 @@ public class DrawingTemplate : MonoBehaviour
     {
         m_ImageTexture.sprite = DrawingUtil.CreateSprite();
 
-        m_ShapeList = ShapeParser.GetShapes();
         m_TemplateTexture = m_ImageTexture.sprite.texture;
         m_Pixels = m_TemplateTexture.GetPixels();
 

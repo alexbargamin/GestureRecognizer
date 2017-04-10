@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     private DrawingTemplate m_DrawingTemplate;
 
     [SerializeField]
+    private ShapeLoader m_ShapeLoader;
+
+    [SerializeField]
     private Timer m_Timer;
 
     [SerializeField]
@@ -55,6 +58,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameObject m_Blocker;
+
+    [SerializeField]
+    private GameObject m_ErrorConfigScreen;
 
     private int m_Score = 0;
 
@@ -164,6 +170,9 @@ public class GameManager : MonoBehaviour
         m_ButtonStart.onClick.AddListener(OnStartButtonClick);
         m_ButtonRestart.onClick.AddListener(OnRestartButtonClick);
 
+        m_ShapeLoader.OnSuccessLoad += OnSuccessLoadConfig;
+        m_ShapeLoader.OnFailLoad += OnFailLoadConfig;
+
         m_DrawingControl.OnDraw += OnDraw;
         m_DrawingControl.OnFinishDraw += OnFinishDraw;
         m_DrawingControl.OnOutsideSurfaceDraw += OnOutsideDraw;
@@ -175,13 +184,13 @@ public class GameManager : MonoBehaviour
         m_CorrectAnswer.SetActive(false);
         m_WrongAnswer.SetActive(false);
         m_TimerArea.SetActive(false);
+
+        m_ErrorConfigScreen.SetActive(false);
     }
 
-    // Use this for initialization
-    private void Start()
+    private void Awake()
     {
         Initialization();
-        ShowStartScreen();
     }
 
     #endregion
@@ -246,6 +255,26 @@ public class GameManager : MonoBehaviour
     private void OnBeginAnswerShow()
     {
         m_Timer.Pause();
+    }
+
+    private void OnSuccessLoadConfig()
+    {
+        List<Shape> shapes = m_ShapeLoader.GetShapes();
+        if (shapes != null && shapes.Count > 0)
+        {
+
+            m_DrawingTemplate.SetShapes(m_ShapeLoader.GetShapes());
+            ShowStartScreen();
+        }
+        else
+        {
+            OnFailLoadConfig();
+        }
+    }
+
+    private void OnFailLoadConfig()
+    {
+        m_ErrorConfigScreen.SetActive(true);
     }
 
     #endregion
