@@ -1,0 +1,74 @@
+<shapes>
+  <shape>
+    <points>
+      <point x="100" y="100"/>
+      <point x="100" y="200"/>
+      <point x="200" y="200"/>
+      <point x="200" y="100"/>
+    </points>
+  </shape>
+  <shape>
+    <points>
+      <point x="100" y="100"/>
+      <point x="150" y="200"/>
+      <point x="200" y="100"/>
+    </points>
+  </shape>
+  <shape>
+    <points>
+      <point x="100" y="200"/>
+      <point x="50" y="100"/>
+      <point x="200" y="100"/>
+      <point x="250" y="200"/>
+    </points>
+  </shape>
+  <shape>
+    <points>
+      <point x="100" y="200"/>
+      <point x="50" y="100"/>
+      <point x="250" y="100"/>
+    </points>
+  </shape>
+  <shape>
+    <points>
+      <point x="100" y="250"/>
+      <point x="100" y="50"/>
+      <point x="200" y="50"/>
+      <point x="200" y="250"/>
+    </points>
+  </shape>
+  <shape>
+    <points>
+      <point x="100" y="200"/>
+      <point x="50" y="100"/>
+      <point x="250" y="100"/>
+      <point x="200" y="200"/>
+    </points>
+  </shape>
+  <shape>
+    <points>
+      <point x="150" y="250"/>
+      <point x="50" y="200"/>
+      <point x="50" y="100"/>
+      <point x="250" y="100"/>
+      <point x="250" y="200"/>
+    </points>
+  </shape>
+  <shape>
+    <points>
+      <point x="150" y="250"/>
+      <point x="100" y="200"/>
+      <point x="100" y="100"/>
+      <point x="150" y="50"/>
+      <point x="200" y="100"/>
+      <point x="200" y="200"/>
+    </points>
+  </shape>
+  <shape>
+    <points>
+      <point x="50" y="200"/>
+      <point x="150" y="50"/>
+      <point x="250" y="150"/>
+    </points>
+  </shape>
+</shapes>
