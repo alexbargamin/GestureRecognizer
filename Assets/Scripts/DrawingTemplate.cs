@@ -75,8 +75,6 @@ public class DrawingTemplate : MonoBehaviour
             DrawingUtil.Draw(m_TemplateTexture, m_Pixels, curPixel, prevPixel, Color.black);
             prevPixel = curPixel;
         }
-
-        DrawingUtil.Draw(m_TemplateTexture, m_Pixels, prevPixel, shape.Points[0], Color.black);
     }
 
     private void InitializeTemplate()
